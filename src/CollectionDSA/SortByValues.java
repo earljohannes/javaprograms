@@ -75,8 +75,8 @@ public class SortByValues
         h.put("PJB", 72);
         h.put("ANJ_KRND", 1600);
         h.put("WAGHMARE", 5000);
-        h.put("Graciela Montes", 36000);
-        h.put("AMIRAHDYME", 32000);
+        h.put("Graciela", 36000);
+        h.put("AMIRAH", 32000);
 
         
         h = sortByValues(h);
