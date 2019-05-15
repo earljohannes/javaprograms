@@ -23,14 +23,19 @@ public class maxKTrans {
             if(al.get(ind).type.equals("MX"))
             {
                 if(al.get(i).type.equals("MN"))
-                    res = al.get(i).value - al.get(ind).value + M(al, Depth+1, i);
+                {
+                    int res1 = al.get(i).value - al.get(ind).value + M(al, Depth+1, i);
+                    int res2 = M(al, Depth, i);
+                    
+                    res = Math.max(res1, res2);
+                }
 
             }
 
             if(al.get(ind).type.equals("MN"))
             {
                 if(al.get(i).type.equals("MX"))
-                    res = M(al, Depth+1, i);
+                    res = M(al, Depth, i);
             }
             max = Math.max(max, res);
         }
@@ -97,11 +102,13 @@ public class maxKTrans {
                         S[i] = "doesn't matter";
                 }
             }
-
+            /*
             for(TransDet i: al)
                 System.out.println(i.type+" "+i.value);
+            */
+            int ans = M(al, -1, 0);
             
-            int ans = M(al, 0, 0);
+            System.out.println(ans);
 
         }
 
